@@ -133,12 +133,13 @@
         fetch('https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1', options)
             .then(response => response.json())
             .then(data => {
+                let str = "";
                 data.results.forEach((movie,index) => {
                      console.log(movie)
-                    document.querySelector(".mycard").innerHTML =
-                    `<div class="col" id="card">
+                    
+                 str = str + `<div class="col" id="card">
             <div class="card-img"> <img
-                    src=" "
+                    src="https://api.themoviedb.org /3/configuration"
                     alt="" height="320"> </div>
             <div class="card-head">
                 <h2>${movie.title}</h2>
@@ -146,26 +147,8 @@
             <div class="card-main">${movie.overview}</div>
             <div class="card-footer">${movie.vote_average}</div>
         </div>`
-                });
-
-                                //     let title = a['title'];
-                //     let overview = a['overview'];
-                //     let vote_average = a['vote_average'];
-                //           console.log(title, overview, vote_average);                  
-                // });
-                // response.results
-                // console.log(response.results)
-                document.querySelector(".mycard").innerHTML =
-                    `<div class="col" id="card">
-            <div class="card-img"> <img
-                    src=" "
-                    alt="" height="320"> </div>
-            <div class="card-head">
-                <h2>${response.results[index].title}</h2>
-            </div>
-            <div class="card-main">${response.results[0].overview}</div>
-            <div class="card-footer">${response.results[0].vote_average}</div>
-        </div>`
+             })
+            document.querySelector(".mycard").innerHTML = str
             })
             .catch(err => console.error(err));
 
