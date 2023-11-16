@@ -1,0 +1,19 @@
+header{
+  height: 70px;
+  background-color: bisque;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+.body{
+  background-color: beige;
+}
+footer{
+  background-color: aliceblue;
+}
+.box{
+  width: 200px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
